@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pool Game</title>
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="styles.css">
+    <script src="scripts/main.js" type="module" defer></script>
+</head>
+<body>
+    <div class="container">
+        <canvas id="canvas" width="1000" height="600"></canvas>
+
+        <button id="settingsButton" class="settings-btn">SETTINGS</button>
+
+        <div id="settingsModal" class="modal">        
+          <div class="modal-content">
+            <div class="settings-headers">
+                <button id="closeButton" class="close heading-text">EXIT</button>
+                <h1 class="heading-text settings-title">SETTINGS</h1>
+            </div>
+
+            <div>
+                <h1 class="subheading-text">Game Settings</h1>
+            </div>
+
+            <div id="pool-mode-settings" class="settings-container green1">
+                <label for="poolmode" class="settings-options" id="poolmodelabel">Pool Mode: </label>
+                <input type="checkbox" id="poolmode" class="settings-content" checked>
+            </div>
+
+            <div>
+                <h1 class="subheading-text">Ball Settings</h1>
+            </div>
+
+            <div id="speed-settings" class="settings-container green1">
+                <label for="ballspeed" class="settings-options">Ball Speed: </label>&nbsp;
+                <input type="range" min="-100" max="300" value="45" class="slider" id="ballspeed" step="1">&nbsp;
+                <label for="ballspeed" class="settings-options" id="ballspeedlabel">(0)</label>
+            </div>
+
+            <div id="acceleration-settings" class="settings-container green2">
+                <label for="acceleration" class="settings-options">Acceleration: </label>&nbsp;
+                <input type="range" min="-50" max="50" value="-6" class="slider" id="ballacceleration" step="1">&nbsp;
+                <label for="acceleration" class="settings-options" id="ballaccelerationlabel">(0)</label>
+            </div>
+
+            <div id="ball-number-settings" class="settings-container green1 nonpoolmodediv">
+                <label for="ballnumber" class="settings-options">Number of Balls: </label>&nbsp;
+                <label for="ballnumber" class="settings-options poolmode">EXIT POOL MODE</label>
+                <input type="range" min="1" max="60" value="16" class="slider nonpoolmode" id="ballnumber" step="1">&nbsp;
+                <label for="ballnumber" class="settings-options nonpoolmode" id="ballnumberlabel">[0]</label>
+            </div>
+
+            <div id="ballsize-settings" class="settings-container green2 nonpoolmodediv">
+                <label for="ballsize" class="settings-options">Ball Radius: </label>&nbsp;
+                <label for="ballsize" class="settings-options poolmode">EXIT POOL MODE</label>
+                <input type="range" min="10" max="300" value="40" class="slider nonpoolmode" id="ballsize" step="1">&nbsp;
+                <label for="ballsize" class="settings-options nonpoolmode" id="ballsizelabel">(0)</label>
+            </div>
+
+            <div id="ball-number-settings" class="settings-container green1 nonpoolmodediv">
+                <label for="ballrandomsize" class="settings-options">Random Size: </label>&nbsp;
+                <label for="ballrandomsize" class="settings-options poolmode">EXIT POOL MODE</label>
+                <input type="checkbox" id="ballrandomsize" class="settings-content nonpoolmode">&nbsp;
+            </div>
+
+            <div>
+                <h1 class="subheading-text">Table Settings</h1>
+            </div>
+
+            <div id="aspect-ratio-settings" class="settings-container green1">
+                <label for="aspect" class="settings-options">Aspect Ratio: </label>
+                <input type="number" value="1" id="tableratiow">
+                <input type="number" value="2" id="tableratioh">
+                <label for="aspect" class="settings-options" id="tableaspectlabel">(0:0)</label>
+            </div>
+
+            <div id="size-settings" class="settings-container green2">
+                <label for="tablesize" class="settings-options">Table Size: </label>
+                <input type="range" min="0.05" max="1" value="0.8" class="slider" id="tablesize" step="0.05">
+                <label for="tablesize" class="settings-options" id="tablesizelabel">(0%)</label>
+            </div>
+
+          </div>
+      
+        </div>
+    </div>
+</body>
+</html>
